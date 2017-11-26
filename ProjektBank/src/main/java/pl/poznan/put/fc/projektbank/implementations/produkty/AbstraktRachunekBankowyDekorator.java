@@ -53,7 +53,7 @@ public abstract class AbstraktRachunekBankowyDekorator implements IRachunekBanko
     
     @Override
     public double getStanRachunku() {
-        return rachunek.getStanRachunku() + stanDebetu;
+        return rachunek.getStanRachunku() + maksymalnyDebet;
     }
     
     @Override

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="pl.poznan.put.fc.projektbank.testy.TestyBank" time="0.266" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="pl.poznan.put.fc.projektbank.testy.TestyBank" time="0.109" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="X:\Documents\ProjektBank"/>
+    <property name="user.dir" value="C:\Users\inf83973\Documents\GitHub\projektBank\ProjektBank"/>
     <property name="java.runtime.version" value="1.8.0_111-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="C:\software\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\software\NetBeans 8.1\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\software\Python35-32\Scripts\;C:\software\Python35-32\;C:\software\ImageMagick-7.0.2-Q16;C:\software\Perl\site\bin;C:\software\Perl\bin;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Administrator\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\software\Anaconda3;C:\software\Anaconda3\Scripts;C:\software\Anaconda3\Library\bin;C:\software\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\Symfonia\PDF;C:\software\gnuplot\bin;C:\software\nodejs\;C:\software\TortoiseGit\bin;C:\software\Git\cmd;C:\software\TortoiseHg\;C:\software\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\software\apache-maven-3.3.9\bin;C:\Program Files\dotnet\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Users\inf83973\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\software\Python35-32\Scripts\;C:\software\Python35-32\;C:\software\ImageMagick-7.0.2-Q16;C:\software\Perl\site\bin;C:\software\Perl\bin;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Administrator\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\software\Anaconda3;C:\software\Anaconda3\Scripts;C:\software\Anaconda3\Library\bin;C:\software\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\Symfonia\PDF;C:\software\gnuplot\bin;C:\software\nodejs\;C:\software\TortoiseGit\bin;C:\software\Git\cmd;C:\software\TortoiseHg\;C:\software\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\software\apache-maven-3.3.9\bin;C:\Program Files\dotnet\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Users\inf83973\AppData\Local\Microsoft\WindowsApps;C:\Users\inf83973\AppData\Local\GitHubDesktop\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -63,8 +63,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testOdsetek" time="0.093"/>
-  <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testPrzelewu" time="0.016"/>
+  <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testOdsetek" time="0.062"/>
+  <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testPrzelewu" time="0"/>
   <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testWyplaty" time="0"/>
+  <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testkontoDebetowe" time="0"/>
   <testcase classname="pl.poznan.put.fc.projektbank.testy.TestyBank" name="testWplaty" time="0"/>
 </testsuite>

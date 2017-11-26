@@ -13,7 +13,9 @@ import pl.poznan.put.fc.projektbank.implementations.mechdebet.SystemOdsetekA;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Przelew;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Wplata;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Wyplata;
+import pl.poznan.put.fc.projektbank.implementations.produkty.KontoDebetowe;
 import pl.poznan.put.fc.projektbank.implementations.produkty.RachunekBankowy;
+import pl.poznan.put.fc.projektbank.interfaces.IRachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
 
@@ -65,6 +67,13 @@ public class TestyBank {
         rachunekNad.setStanRachunku(10000);
         sysOdsA.naliczOdsetki();
         assertEquals(11000, rachunekNad.getStanRachunku(), 0.00001);
+    }
+    
+    @Test
+    public void testkontoDebetowe() {
+        rachunekNad.setStanRachunku(100);
+        IRachunekBankowy rachDeb = new KontoDebetowe(rachunekNad, 1000);
+        assertEquals(1100, rachDeb.getStanRachunku(), 0.0001);
     }
     
     @After
