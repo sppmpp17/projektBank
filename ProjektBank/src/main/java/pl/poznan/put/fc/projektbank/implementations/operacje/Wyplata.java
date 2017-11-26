@@ -24,7 +24,7 @@ public class Wyplata implements OperacjaBankowa {
     
     @Override
     public void wykonaj() {
-        rachunekBankowy.setStanRachunku(rachunekBankowy.getStanRachunku() - wielkoscWyplaty);
+        rachunekBankowy.wykonajWyplate(wielkoscWyplaty);
     }
     
 }

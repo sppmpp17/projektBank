@@ -6,9 +6,7 @@
 package pl.poznan.put.fc.projektbank.implementations.produkty;
 
 import java.time.LocalDate;
-import pl.poznan.put.fc.projektbank.implementations.operacje.Przelew;
-import pl.poznan.put.fc.projektbank.implementations.operacje.Wplata;
-import pl.poznan.put.fc.projektbank.implementations.operacje.Wyplata;
+import pl.poznan.put.fc.projektbank.interfaces.IRachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 import pl.poznan.put.fc.projektbank.interfaces.ProduktBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
@@ -17,7 +15,7 @@ import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
  *
  * @author fenix
  */
-public class RachunekBankowy implements ProduktBankowy {
+public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy {
     private final long idRachunku;
     private final LocalDate dataZalozenia;
     private double stanRachunku;
@@ -44,6 +42,14 @@ public class RachunekBankowy implements ProduktBankowy {
     @Override
     public void wykonajOperacje(OperacjaBankowa operacja) {
         operacja.wykonaj();
+    }
+    
+    public void wykonajWplate(double wielkosc) {
+        stanRachunku += wielkosc;
+    }
+    
+    public void wykonajWyplate(double wielkosc) {
+        stanRachunku -= wielkosc;
     }
     
     public void setSystemOdsetek(SystemOdsetek systemOdsetek) {

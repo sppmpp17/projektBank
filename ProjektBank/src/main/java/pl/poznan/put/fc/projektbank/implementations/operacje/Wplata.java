@@ -24,7 +24,7 @@ public class Wplata implements OperacjaBankowa {
     
     @Override
     public void wykonaj() {
-        rachunekBankowy.setStanRachunku(rachunekBankowy.getStanRachunku() + wielkoscWlpaty);
+        rachunekBankowy.wykonajWplate(wielkoscWlpaty);
     }
     
 }
