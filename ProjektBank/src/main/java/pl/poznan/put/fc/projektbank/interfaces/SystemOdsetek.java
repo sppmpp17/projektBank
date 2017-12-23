@@ -5,8 +5,6 @@
  */
 package pl.poznan.put.fc.projektbank.interfaces;
 
-import pl.poznan.put.fc.projektbank.implementations.produkty.RachunekBankowy;
-
 /**
  *
  * @author inf83973

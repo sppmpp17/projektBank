@@ -10,24 +10,30 @@ import pl.poznan.put.fc.projektbank.interfaces.IRachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 import pl.poznan.put.fc.projektbank.interfaces.ProduktBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
+import pl.poznan.put.fc.projektbank.interfaces.Visitable;
 
 /**
  *
  * @author fenix
  */
-public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy {
+public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy, Visitable {
     private final long idRachunku;
     private final LocalDate dataZalozenia;
     private double stanRachunku;
     private SystemOdsetek systemOdsetek;
-    
+
     public RachunekBankowy(long id, SystemOdsetek systemOdsetek) {
         idRachunku = id;
         stanRachunku = 0.0;
         dataZalozenia = LocalDate.now();
         this.systemOdsetek = systemOdsetek;
     }
-    
+
+    public long GetNumerRachunku()
+    {
+    	return idRachunku;
+    }
+
     //@Override
     public double getStanRachunku() {
         return stanRachunku;
@@ -43,15 +49,15 @@ public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy {
     public void wykonajOperacje(OperacjaBankowa operacja) {
         operacja.wykonaj();
     }
-    
+
     public void wykonajWplate(double wielkosc) {
         stanRachunku += wielkosc;
     }
-    
+
     public void wykonajWyplate(double wielkosc) {
         stanRachunku -= wielkosc;
     }
-    
+
     public void setSystemOdsetek(SystemOdsetek systemOdsetek) {
         this.systemOdsetek = systemOdsetek;
     }
@@ -59,4 +65,11 @@ public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy {
     public SystemOdsetek getSystemOdsetek() {
         return systemOdsetek;
     }
+
+	@Override
+	public void Accept(Raport InVisitor)
+	{
+		InVisitor.Visit(this);
+
+	}
 }

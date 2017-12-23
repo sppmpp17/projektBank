@@ -5,6 +5,8 @@
  */
 package pl.poznan.put.fc.projektbank.interfaces;
 
+import pl.poznan.put.fc.projektbank.implementations.produkty.Raport;
+
 /**
  *
  * @author inf83973
@@ -15,12 +17,14 @@ public interface IRachunekBankowy {
     public void setStanRachunku(double stanRachunku);
 
     public void wykonajOperacje(OperacjaBankowa operacja);
-    
+
     public void wykonajWplate(double wielkosc);
-    
+
     public void wykonajWyplate(double wielkosc);
-    
+
     public void setSystemOdsetek(SystemOdsetek systemOdsetek);
 
     public SystemOdsetek getSystemOdsetek();
+
+    public void Accept(Raport InVisitor);
 }
