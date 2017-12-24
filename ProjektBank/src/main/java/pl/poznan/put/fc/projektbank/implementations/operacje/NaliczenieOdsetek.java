@@ -24,8 +24,8 @@ public class NaliczenieOdsetek implements OperacjaBankowa {
     
     @Override
     public void wykonaj() {
-        OperacjaBankowa wplata = new Wplata(rachunek, rachunek.getStanRachunku()*oprocentowanie/100);
-        rachunek.wykonajOperacje(wplata);
+        double stanAktualny = rachunek.getStanRachunku();
+        rachunek.setStanRachunku(stanAktualny+stanAktualny*oprocentowanie/100.0);
     }
     
 }

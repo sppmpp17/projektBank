@@ -29,9 +29,9 @@ public class Kredyt extends RachunekBankowy implements Visitable
         return rachunek;
     }
 
-    public void zerwijLokate() {
-        OperacjaBankowa zerwanieLokaty = new SplataKredytu(this);
-        zerwanieLokaty.wykonaj();
+    public void zerwijKredyt() {
+        OperacjaBankowa zerwanieKredytu = new SplataKredytu(this);
+        zerwanieKredytu.wykonaj();
     }
 
 

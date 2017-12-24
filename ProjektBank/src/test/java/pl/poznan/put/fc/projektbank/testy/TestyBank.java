@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 import pl.poznan.put.fc.projektbank.implementations.Bank;
 import pl.poznan.put.fc.projektbank.implementations.KIR;
-import pl.poznan.put.fc.projektbank.implementations.mechdebet.SystemOdsetekA;
+import pl.poznan.put.fc.projektbank.implementations.mechdebet.SystemOdsetekLokata;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Przelew;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Wplata;
 import pl.poznan.put.fc.projektbank.implementations.operacje.Wyplata;
@@ -50,7 +50,7 @@ public class TestyBank {
 
         rachunekNad = new RachunekBankowy(1, null); // id=1, SystemOdsetek=brak
         rachunekOdb = new RachunekBankowy(1, null); // id=2, SystemOdsetek=brak
-        sysOdsA = new SystemOdsetekA(rachunekNad);
+        sysOdsA = new SystemOdsetekLokata(rachunekNad);
 
 
     	BankNad.DodajRachunekBankowy(rachunekNad);

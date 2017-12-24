@@ -27,7 +27,6 @@ public class RozwiazanieLokaty implements OperacjaBankowa {
         if(lokata.getTerminDo().isBefore(LocalDate.now())) {
             SystemOdsetek system = lokata.getSystemOdsetek();
             system.naliczOdsetki();
-            //lokata.getRachunekBankowy().wykonajWplate(odsetki);
         }
     }
     

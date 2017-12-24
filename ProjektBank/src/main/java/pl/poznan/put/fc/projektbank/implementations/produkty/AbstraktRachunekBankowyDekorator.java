@@ -18,7 +18,7 @@ import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
  */
 public abstract class AbstraktRachunekBankowyDekorator implements IRachunekBankowy {
     protected RachunekBankowy rachunek;
-    private double maksymalnyDebet;
+    private final double maksymalnyDebet;
     private double stanDebetu;
     private MechanizmDebetowy mechanizmDebetowy;
 
@@ -59,12 +59,12 @@ public abstract class AbstraktRachunekBankowyDekorator implements IRachunekBanko
     @Override
     public void wykonajWplate(double wielkosc) {
         stanDebetu -= wielkosc;
-            if(stanDebetu < 0.0) {
-                double nadmiar = -1.0 * stanDebetu;
-                stanDebetu = 0.0;
-                OperacjaBankowa wplata = new Wplata(rachunek, nadmiar);
-                rachunek.wykonajOperacje(wplata);
-            }
+        if(stanDebetu < 0.0) {
+            double nadmiar = -1.0 * stanDebetu;
+            stanDebetu = 0.0;
+            OperacjaBankowa wplata = new Wplata(rachunek, nadmiar);
+            rachunek.wykonajOperacje(wplata);
+        }
     }
     
     @Override

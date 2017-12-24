@@ -6,7 +6,6 @@
 package pl.poznan.put.fc.projektbank.implementations.mechdebet;
 
 import pl.poznan.put.fc.projektbank.implementations.operacje.NaliczenieOdsetek;
-import pl.poznan.put.fc.projektbank.implementations.operacje.Wplata;
 import pl.poznan.put.fc.projektbank.implementations.produkty.RachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
@@ -15,10 +14,10 @@ import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
  *
  * @author inf83973
  */
-public class SystemOdsetekA implements SystemOdsetek {
+public class SystemOdsetekLokata implements SystemOdsetek {
     private final RachunekBankowy rachunek;
     
-    public SystemOdsetekA(RachunekBankowy rachunek) {
+    public SystemOdsetekLokata(RachunekBankowy rachunek) {
         this.rachunek = rachunek;
     }
 
@@ -35,5 +34,4 @@ public class SystemOdsetekA implements SystemOdsetek {
         }
         rachunek.wykonajOperacje(nalOds);
     }
-    
 }

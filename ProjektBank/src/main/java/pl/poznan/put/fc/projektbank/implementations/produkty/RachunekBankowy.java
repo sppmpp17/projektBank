@@ -34,42 +34,45 @@ public class RachunekBankowy implements ProduktBankowy, IRachunekBankowy, Visita
     	return idRachunku;
     }
 
-    //@Override
+    @Override
     public double getStanRachunku() {
         return stanRachunku;
     }
 
-    //@Override
+    @Override
     public void setStanRachunku(double stanRachunku) {
         this.stanRachunku = stanRachunku;
     }
 
-    // Do przemyslenia ?????
     @Override
     public void wykonajOperacje(OperacjaBankowa operacja) {
         operacja.wykonaj();
     }
 
+    @Override
     public void wykonajWplate(double wielkosc) {
         stanRachunku += wielkosc;
     }
 
+    @Override
     public void wykonajWyplate(double wielkosc) {
         stanRachunku -= wielkosc;
     }
 
+    @Override
     public void setSystemOdsetek(SystemOdsetek systemOdsetek) {
         this.systemOdsetek = systemOdsetek;
     }
 
+    @Override
     public SystemOdsetek getSystemOdsetek() {
         return systemOdsetek;
     }
 
-	@Override
-	public void Accept(Raport InVisitor)
-	{
-		InVisitor.Visit(this);
+    @Override
+    public void Accept(Raport InVisitor)
+    {
+            InVisitor.Visit(this);
 
-	}
+    }
 }

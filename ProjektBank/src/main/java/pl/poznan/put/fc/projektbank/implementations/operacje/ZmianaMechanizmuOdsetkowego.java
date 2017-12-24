@@ -15,8 +15,8 @@ import pl.poznan.put.fc.projektbank.interfaces.SystemOdsetek;
  */
 public class ZmianaMechanizmuOdsetkowego implements OperacjaBankowa {
     private static final TypOperacji TYP = TypOperacji.ZMIANA_MECHANIZMU_ODSETKOWEGO;
-    private RachunekBankowy rachunek;
-    private SystemOdsetek systemOds;
+    private final RachunekBankowy rachunek;
+    private final SystemOdsetek systemOds;
     
     public ZmianaMechanizmuOdsetkowego(RachunekBankowy rachunek, SystemOdsetek systemOds) {
         this.rachunek = rachunek;

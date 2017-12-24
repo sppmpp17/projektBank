@@ -5,6 +5,8 @@
  */
 package pl.poznan.put.fc.projektbank.implementations.operacje;
 
+import pl.poznan.put.fc.projektbank.implementations.produkty.Kredyt;
+import pl.poznan.put.fc.projektbank.implementations.produkty.RachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 
 /**
@@ -13,10 +15,20 @@ import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
  */
 public class ZaciagniecieKredytu implements OperacjaBankowa {
     private static final TypOperacji TYP = TypOperacji.ZACIAGNIECIE_KREDYTU;
+    private Kredyt kredyt;
+    private double wielkosc;
+    
+    public ZaciagniecieKredytu(Kredyt kredyt, double wielkosc) {
+        this.kredyt = kredyt;
+        this.wielkosc = wielkosc;
+    }
     
     @Override
     public void wykonaj() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        OperacjaBankowa wyplata = new Wyplata(kredyt, wielkosc);
+        OperacjaBankowa wplata = new Wplata(kredyt.getRachunekBankowy(), wielkosc);
+        kredyt.wykonajOperacje(wyplata);
+        kredyt.getRachunekBankowy().wykonajOperacje(wplata);
     }
     
 }
