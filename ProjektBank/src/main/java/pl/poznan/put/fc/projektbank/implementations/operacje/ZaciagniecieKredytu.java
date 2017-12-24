@@ -15,8 +15,8 @@ import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
  */
 public class ZaciagniecieKredytu implements OperacjaBankowa {
     private static final TypOperacji TYP = TypOperacji.ZACIAGNIECIE_KREDYTU;
-    private Kredyt kredyt;
-    private double wielkosc;
+    private final Kredyt kredyt;
+    private final double wielkosc;
     
     public ZaciagniecieKredytu(Kredyt kredyt, double wielkosc) {
         this.kredyt = kredyt;

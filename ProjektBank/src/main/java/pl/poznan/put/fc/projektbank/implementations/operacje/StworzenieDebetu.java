@@ -5,6 +5,8 @@
  */
 package pl.poznan.put.fc.projektbank.implementations.operacje;
 
+import pl.poznan.put.fc.projektbank.implementations.produkty.KontoDebetowe;
+import pl.poznan.put.fc.projektbank.implementations.produkty.RachunekBankowy;
 import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
 
 /**
@@ -13,10 +15,19 @@ import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
  */
 public class StworzenieDebetu implements OperacjaBankowa {
     private static final TypOperacji TYP = TypOperacji.STWORZENIE_DEBETU;
+    private RachunekBankowy rachunek;
+    private KontoDebetowe debet;
+    private double wielkosc;
+    
+    public StworzenieDebetu(RachunekBankowy rachunek, KontoDebetowe debet, double wielkosc) {
+        this.rachunek = rachunek;
+        this.debet = debet;
+        this.wielkosc = wielkosc;
+    }
     
     @Override
     public void wykonaj() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        debet = new KontoDebetowe(rachunek, wielkosc);
     }
     
 }

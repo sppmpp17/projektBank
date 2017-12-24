@@ -15,13 +15,20 @@ import pl.poznan.put.fc.projektbank.interfaces.OperacjaBankowa;
  */
 public class ZalozenieLokaty implements OperacjaBankowa {
     private static final TypOperacji TYP = TypOperacji.ZALOZENIE_LOKATY;
-    private RachunekBankowy rachunek;
-    private Lokata lokata;
-    private double wielkosc;
+    private final Lokata lokata;
+    private final double wielkosc;
+    
+    public ZalozenieLokaty(Lokata lokata, double wielkosc) {
+        this.lokata = lokata;
+        this.wielkosc = wielkosc;
+    }
     
     @Override
     public void wykonaj() {
-        
+        OperacjaBankowa wplata = new Wplata(lokata, wielkosc);
+        OperacjaBankowa wyplata = new Wyplata(lokata.getRachunekBankowy(), wielkosc);
+        lokata.wykonajOperacje(wplata);
+        lokata.getRachunekBankowy().wykonajOperacje(wyplata);
     }
     
 }
